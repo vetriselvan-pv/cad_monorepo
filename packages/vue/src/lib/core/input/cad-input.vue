@@ -2,7 +2,7 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import '@cad/core'; // Register the web component
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     modelValue?: string;
     placeholder?: string;
@@ -47,7 +47,7 @@ onBeforeUnmount(() => {
     :value="modelValue"
     :placeholder="placeholder"
     :type="type"
-    :disabled="disabled ? '' : undefined"
+    :disabled="disabled"
   >
   </cad-input>
 </template>

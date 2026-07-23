@@ -46,7 +46,7 @@ export class CadTabs extends BaseComponent {
     this.syncTabs = this.syncTabs.bind(this);
   }
 
-  connectedCallback() {
+  override connectedCallback() {
     super.connectedCallback();
     this.addEventListener('cad-tab-select', this.handleTabSelect as EventListener);
     this.addEventListener('keydown', this.handleKeydown);

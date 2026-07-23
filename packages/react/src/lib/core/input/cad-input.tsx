@@ -1,30 +1,6 @@
-import React, { HTMLAttributes, useEffect, useRef } from 'react';
+import React, {  useEffect, useRef } from 'react';
 import '@cad/core';
-
-export interface CadInputProps extends Omit<
-  HTMLAttributes<HTMLElement>,
-  'onChange' | 'onInput'
-> {
-  value?: string;
-  placeholder?: string;
-  type?: string;
-  disabled?: boolean;
-  onValueChange?: (value: string) => void;
-}
-
-declare namespace JSX {
-  interface IntrinsicElements {
-    'cad-input': React.DetailedHTMLProps<
-      React.HTMLAttributes<HTMLElement> & {
-        value?: string;
-        placeholder?: string;
-        type?: string;
-        disabled?: boolean;
-      },
-      HTMLElement
-    >;
-  }
-}
+import { CadInputProps } from '../../model/cad-input.model';
 
 export const CadInput: React.FC<CadInputProps> = ({
   value,

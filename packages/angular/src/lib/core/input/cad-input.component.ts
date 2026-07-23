@@ -4,9 +4,9 @@ import {
   input,
   output,
   ElementRef,
-  ViewChild,
   AfterViewInit,
   OnDestroy,
+  viewChild
 } from '@angular/core';
 import '@cad/core'; // Register the web component
 
@@ -32,7 +32,7 @@ export class CadUiAngularInputComponent implements AfterViewInit, OnDestroy {
 
   valueChange = output<string>();
 
-  @ViewChild('inputEl') inputEl!: ElementRef<HTMLElement>;
+  readonly inputEl = viewChild.required<ElementRef<HTMLElement>>('inputEl');
 
   private handleInput = (event: Event) => {
     const customEvent = event as CustomEvent;
@@ -40,8 +40,9 @@ export class CadUiAngularInputComponent implements AfterViewInit, OnDestroy {
   };
 
   ngAfterViewInit() {
-    if (this.inputEl) {
-      this.inputEl.nativeElement.addEventListener(
+    const inputEl = this.inputEl();
+    if (inputEl) {
+      inputEl.nativeElement.addEventListener(
         'cad-input',
         this.handleInput,
       );
@@ -49,8 +50,9 @@ export class CadUiAngularInputComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.inputEl) {
-      this.inputEl.nativeElement.removeEventListener(
+    const inputEl = this.inputEl();
+    if (inputEl) {
+      inputEl.nativeElement.removeEventListener(
         'cad-input',
         this.handleInput,
       );

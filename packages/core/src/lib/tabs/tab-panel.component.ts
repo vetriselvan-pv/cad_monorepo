@@ -17,7 +17,7 @@ export class CadTabPanel extends BaseComponent {
     return this.hasAttribute('active');
   }
 
-  connectedCallback() {
+  override connectedCallback() {
     super.connectedCallback();
     this.setAttribute('role', 'tabpanel');
     if (!this.hasAttribute('tabindex')) {

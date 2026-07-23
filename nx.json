@@ -69,6 +69,15 @@
     "@nx/angular:unit-test": {
       "cache": true,
       "inputs": ["default", "^production"]
+    },
+    "@angular/build:application": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "@angular/build:unit-test": {
+      "cache": true,
+      "inputs": ["default", "^production"]
     }
   },
   "nxCloudId": "6a60e48545083f1faf368820",
@@ -76,7 +85,18 @@
   "generators": {
     "@nx/react": {
       "library": {
+        "style": "css",
+        "linter": "none",
         "unitTestRunner": "none"
+      },
+      "application": {
+        "babel": true,
+        "style": "css",
+        "linter": "none",
+        "bundler": "vite"
+      },
+      "component": {
+        "style": "css"
       }
     },
     "@nx/angular:library": {
@@ -85,6 +105,12 @@
     },
     "@nx/angular:component": {
       "style": "css"
+    },
+    "@nx/angular:application": {
+      "e2eTestRunner": "playwright",
+      "linter": "eslint",
+      "style": "css",
+      "unitTestRunner": "vitest-angular"
     }
   }
 }

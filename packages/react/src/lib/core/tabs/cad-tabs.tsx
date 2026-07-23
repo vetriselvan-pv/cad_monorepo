@@ -1,45 +1,6 @@
-import React, { HTMLAttributes, useEffect, useRef } from 'react';
+import React, {  useEffect, useRef } from 'react';
 import '@cad/core';
-
-export interface CadTabsProps extends HTMLAttributes<HTMLElement> {
-  orientation?: 'horizontal' | 'vertical';
-  activeTab?: string;
-  onActiveTabChange?: (name: string) => void;
-}
-
-export interface CadTabProps extends HTMLAttributes<HTMLElement> {
-  panel?: string;
-  disabled?: boolean;
-}
-
-export interface CadTabPanelProps extends HTMLAttributes<HTMLElement> {
-  name?: string;
-}
-
-declare namespace JSX {
-  interface IntrinsicElements {
-    'cad-tabs': React.DetailedHTMLProps<
-      React.HTMLAttributes<HTMLElement> & {
-        orientation?: string;
-        'active-tab'?: string;
-      },
-      HTMLElement
-    >;
-    'cad-tab': React.DetailedHTMLProps<
-      React.HTMLAttributes<HTMLElement> & {
-        panel?: string;
-        disabled?: boolean;
-      },
-      HTMLElement
-    >;
-    'cad-tab-panel': React.DetailedHTMLProps<
-      React.HTMLAttributes<HTMLElement> & {
-        name?: string;
-      },
-      HTMLElement
-    >;
-  }
-}
+import { CadTabsProps, CadTabProps, CadTabPanelProps } from '../../model/cad-tabs.model';
 
 export const CadTabs: React.FC<CadTabsProps> = ({
   children,

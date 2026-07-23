@@ -34,7 +34,7 @@ export class CadTab extends BaseComponent {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  connectedCallback() {
+  override connectedCallback() {
     super.connectedCallback();
     if (!this.hasAttribute('slot')) {
       this.setAttribute('slot', 'nav');

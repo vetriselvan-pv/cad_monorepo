@@ -6,5 +6,8 @@
       "path": "./tsconfig.lib.json"
     }
   ],
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"]
+  },
   "extends": "../../tsconfig.base.json"
 }

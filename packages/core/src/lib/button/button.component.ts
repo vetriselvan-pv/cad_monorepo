@@ -1,4 +1,4 @@
-import { BaseComponent } from '../base/base-component.js';
+import { BaseComponent } from '../base/base-component';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'danger';
 

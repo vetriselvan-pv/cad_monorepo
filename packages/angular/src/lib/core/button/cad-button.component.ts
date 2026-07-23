@@ -5,7 +5,7 @@ import '@cad/core';
   selector: 'cad-ui-angular-button',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   template: `
-    <cad-button [attr.variant]="variant" [attr.disabled]="disabled ? '' : null">
+    <cad-button [attr.variant]="variant()" [attr.disabled]="disabled() ? '' : null">
       <ng-content></ng-content>
     </cad-button>
   `,

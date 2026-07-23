@@ -2,16 +2,10 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import '@cad/core'; // Register the web component
 
-const props = withDefaults(
-  defineProps<{
-    orientation?: 'horizontal' | 'vertical';
-    modelValue?: string;
-  }>(),
-  {
-    orientation: 'horizontal',
-    modelValue: undefined,
-  },
-);
+defineProps<{
+  orientation?: 'horizontal' | 'vertical';
+  modelValue?: string;
+}>();
 
 const emit = defineEmits<{
   (e: 'update:modelValue', value: string): void;

@@ -4,9 +4,9 @@ import {
   input,
   output,
   ElementRef,
-  ViewChild,
   AfterViewInit,
   OnDestroy,
+  viewChild
 } from '@angular/core';
 import '@cad/core';
 
@@ -29,7 +29,7 @@ export class CadUiAngularTabsComponent implements AfterViewInit, OnDestroy {
 
   activeTabChange = output<string>();
 
-  @ViewChild('tabsEl') tabsEl!: ElementRef<HTMLElement>;
+  readonly tabsEl = viewChild.required<ElementRef<HTMLElement>>('tabsEl');
 
   private handleChange = (event: Event) => {
     const customEvent = event as CustomEvent<{ name: string }>;
@@ -37,8 +37,9 @@ export class CadUiAngularTabsComponent implements AfterViewInit, OnDestroy {
   };
 
   ngAfterViewInit() {
-    if (this.tabsEl) {
-      this.tabsEl.nativeElement.addEventListener(
+    const tabsEl = this.tabsEl();
+    if (tabsEl) {
+      tabsEl.nativeElement.addEventListener(
         'cad-tabs-change',
         this.handleChange,
       );
@@ -46,8 +47,9 @@ export class CadUiAngularTabsComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.tabsEl) {
-      this.tabsEl.nativeElement.removeEventListener(
+    const tabsEl = this.tabsEl();
+    if (tabsEl) {
+      tabsEl.nativeElement.removeEventListener(
         'cad-tabs-change',
         this.handleChange,
       );

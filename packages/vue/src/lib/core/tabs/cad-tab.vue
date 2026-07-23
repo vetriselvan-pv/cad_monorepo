@@ -3,18 +3,18 @@ import '@cad/core'; // Register the web component
 
 withDefaults(
   defineProps<{
-    variant?: 'primary' | 'secondary' | 'danger';
+    panel?: string;
     disabled?: boolean;
   }>(),
   {
-    variant: 'primary',
+    panel: '',
     disabled: false,
   },
 );
 </script>
 
 <template>
-  <cad-button :variant="variant" :disabled="disabled ? '' : undefined">
+  <cad-tab :panel="panel" :disabled="disabled">
     <slot></slot>
-  </cad-button>
+  </cad-tab>
 </template>
