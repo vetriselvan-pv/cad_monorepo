@@ -18,6 +18,9 @@
     "target": "es2022",
     "customConditions": ["@org/source"],
     "noUncheckedSideEffectImports": false,
-    "types": ["*"]
+    "types": ["*"],
+    "paths": {
+      "@cad/cad-ui-angular": ["./packages/cad-ui-angular/src/index.ts"]
+    }
   }
 }
