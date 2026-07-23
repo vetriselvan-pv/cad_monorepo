@@ -3,3 +3,5 @@ export * from './lib/core/input/cad-input.component';
 export * from './lib/core/tabs/cad-tabs.component';
 export * from './lib/core/tabs/cad-tab.component';
 export * from './lib/core/tabs/cad-tab-panel.component';
+export * from './lib/core/accordion/cad-accordion.component';
+export * from './lib/core/accordion/cad-accordion-item.component';
