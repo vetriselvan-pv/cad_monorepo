@@ -33,6 +33,12 @@ export class CadInput extends BaseComponent {
   }
 
   protected getTemplate(): string {
+    return ` 
+      <input type="text" />
+    `;
+  }
+
+  protected getStyles(): string {
     return `
       <style>
         :host {
@@ -58,12 +64,11 @@ export class CadInput extends BaseComponent {
           cursor: not-allowed;
           opacity: 0.65;
         }
-      </style>
-      <input type="text" />
+      </style> 
     `;
   }
 
-  connectedCallback() {
+  override connectedCallback() {
     super.connectedCallback();
     this._inputElement = this.shadowRoot!.querySelector('input')!;
     this._inputElement.addEventListener('input', this.handleInput);
