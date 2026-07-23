@@ -20,7 +20,10 @@
     "noUncheckedSideEffectImports": false,
     "types": ["*"],
     "paths": {
-      "@cad/cad-ui-angular": ["./packages/cad-ui-angular/src/index.ts"]
+      "@cad/core": ["./packages/core/src/index.ts"],
+      "@cad/angular": ["./packages/angular/src/index.ts"],
+      "@cad/react": ["./packages/react/src/index.ts"],
+      "@cad/vue": ["./packages/vue/src/index.ts"]
     }
   }
 }

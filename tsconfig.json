@@ -4,25 +4,16 @@
   "files": [],
   "references": [
     {
-      "path": "./packages/strings"
+      "path": "./packages/core"
     },
     {
-      "path": "./packages/colors"
+      "path": "./packages/react"
     },
     {
-      "path": "./packages/async"
+      "path": "./packages/vue"
     },
     {
-      "path": "./packages/utils"
-    },
-    {
-      "path": "./packages/cad-ui"
-    },
-    {
-      "path": "./packages/cad-ui-react"
-    },
-    {
-      "path": "./packages/cad-ui-vue"
+      "path": "./packages/angular"
     }
   ],
   "compilerOptions": {}
